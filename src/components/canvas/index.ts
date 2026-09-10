@@ -1,6 +1,7 @@
-import EarthCanvas from "./Earth";
+import HeroGeometryCanvas from "./HeroGeometry";
+import CrystalCanvas from "./Crystal";
 import BallCanvas from "./Ball";
-import ComputersCanvas from "./Computers";
 import StarsCanvas from "./Stars";
+import GamingSetupCanvas from "./GamingSetup";
 
-export { EarthCanvas, BallCanvas, ComputersCanvas, StarsCanvas };
+export { HeroGeometryCanvas, CrystalCanvas, BallCanvas, StarsCanvas, GamingSetupCanvas };

@@ -7,7 +7,7 @@ import { TypedArray } from "three";
 const Stars = (props: any) => {
   const ref = useRef<THREE.Points>();
   const [sphere] = useState<TypedArray>(() =>
-    random.inSphere(new Float32Array(5001), { radius: 1.2 })
+    random.inSphere(new Float32Array(3001), { radius: 1.2 })
   );
 
   useFrame((_state, delta) => {
@@ -22,10 +22,11 @@ const Stars = (props: any) => {
       <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
         <PointMaterial
           transparent
-          color="#f272c8"
+          color="#AF9D8E"
           size={0.002}
           sizeAttenuation={true}
           depthWrite={false}
+          opacity={0.6}
         />
       </Points>
     </group>

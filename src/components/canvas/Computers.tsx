@@ -9,16 +9,19 @@ const Computers: React.FC<{ isMobile: boolean }> = ({ isMobile }) => {
 
   return (
     <mesh>
-      <hemisphereLight intensity={0.15} groundColor="black" />
+      <hemisphereLight intensity={0.35} groundColor="#FFE0CC" color="#FFF5EE" />
       <spotLight
         position={[-20, 50, 10]}
         angle={0.12}
         penumbra={1}
-        intensity={1}
+        intensity={1.2}
         castShadow
         shadow-mapSize={1024}
+        color="#FFF0E5"
       />
-      <pointLight intensity={1} />
+      <pointLight intensity={0.8} color="#FF8A65" position={[0, -2, -1]} />
+      <pointLight intensity={0.4} color="#E8A0BF" position={[2, -3, 1]} />
+      <pointLight intensity={0.6} color="#FFE0CC" position={[-2, 0, 2]} />
       <primitive
         object={computer.scene}
         scale={isMobile ? 0.7 : 0.75}

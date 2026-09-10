@@ -13,6 +13,7 @@ import {
 } from "./components";
 import { useEffect } from "react";
 import { config } from "./constants/config";
+import { ThemeProvider } from "./context/ThemeContext";
 
 const App = () => {
   useEffect(() => {
@@ -22,23 +23,25 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="bg-primary relative z-0">
-        <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
-          <Navbar />
-          <Hero />
+    <ThemeProvider>
+      <BrowserRouter>
+        <div className="bg-primary dark:bg-[#0D0B0A] min-h-screen text-[#48413A] dark:text-[#FAF8F5] relative z-0 bg-warm-pattern transition-colors duration-300">
+          <div className="bg-hero-pattern bg-cover bg-center bg-no-repeat">
+            <Navbar />
+            <Hero />
+          </div>
+          <About />
+          <Experience />
+          <Tech />
+          <Works />
+          <Feedbacks />
+          <div className="relative z-0">
+            <Contact />
+            <StarsCanvas />
+          </div>
         </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Feedbacks />
-        <div className="relative z-0">
-          <Contact />
-          <StarsCanvas />
-        </div>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 };
 
